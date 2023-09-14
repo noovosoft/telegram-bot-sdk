@@ -171,7 +171,7 @@ class CommandBus extends AnswerBus
     private function process(array $entity, Update $update): void
     {
         $command = $this->parseCommand(
-            $update->getMessage()->text,
+            strtolower($update->getMessage()->text),
             $entity['offset'],
             $entity['length']
         );
